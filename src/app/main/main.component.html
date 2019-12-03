@@ -1,28 +1,23 @@
-<div>
-    <label>First Name: </label>
-    <input [(ngModel)]="this.user.first_name" placeholder="First Name"/>
-    <br/>
+<div class="container card">
+  <label>First Name: </label>
+  <input [(ngModel)]="this.user.first_name" placeholder="First Name"/>
+  <br/>
 
-    <label>Last Name: </label>
-    <input [(ngModel)]="this.user.last_name" placeholder="Last Name"/>
-    <br/>
-    
-    <label>Email: </label>
-    <input [(ngModel)]="this.user.email" (keydown.enter) = "addInTable()" placeholder="email@email.com"/>
-    <br/>
-
-    <button  mat-fab color="accent" (click)="addInTable()">Add</button>
-    <br/>
-
-    <a href="/assets/test.txt"> <button>Du-te la un TXT. Sigur iti doresti asta!</button></a>
-
-    <br/>
+  <label>Last Name: </label>
+  <input [(ngModel)]="this.user.last_name" placeholder="Last Name"/>
+  <br/>
+  
+  <label>Email: </label>
+  <input [(ngModel)]="this.user.email" (keydown.enter) = "addInTable()" placeholder="email@email.com"/>
+  <br/>
+   <button  type="button" class="btn btn-dark" (click)="addInTable()">Add</button>
 </div>
-<div>
 
-  <div *ngFor="let user of users">
-      <app-user [user]="user"></app-user>
-      <button (click)="deleteFromTable(user)">Delete</button>
-      <hr>
-  </div>
+
+<div class="container card" *ngFor="let user of users">
+  
+    <app-user class="col-lg" [user]="user"></app-user>
+    <div class="col-sm">
+      <button type="button" class="btn btn-dark" (click)="deleteFromTable(user)">Delete</button>
+    </div>
 </div>

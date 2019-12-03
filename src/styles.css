@@ -1,1 +1,11 @@
 /* Add application styles & imports to this file! */
+body {
+  margin: 20px !important;
+}
+app-main {
+  width: 80% !important;
+  margin: 0 auto;
+}
+button {
+  margin: 10px !important;
+}

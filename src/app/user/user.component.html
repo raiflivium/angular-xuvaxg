@@ -1,8 +1,19 @@
-<table>
-<tr>
-<td>{{user.first_name}}</td>
-<td>{{user.last_name}}</td>
-<td>{{user.email}}</td>
-</tr>
-</table>
-<div><img src="{{user.avatar}}"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm"><img src="{{user.avatar}}"></div>
+    <div class="col-md">
+      <div class="row">
+        <div class="col-md">First Name:</div>
+        <div class="col-md">{{user.first_name}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md">Last Name:</div>
+        <div class="col-md">{{user.last_name}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md">Email:</div>
+        <div class="col-md">{{user.email}}</div>
+      </div>
+    </div>
+  </div>
+</div>
