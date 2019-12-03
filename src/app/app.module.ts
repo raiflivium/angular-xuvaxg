@@ -9,6 +9,7 @@ import { OtherComponent } from './other/other.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { PopulateUsersService } from './populate-users.service';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { PopulateUsersService } from './populate-users.service';
     AppRoutingModule,
     FormsModule 
   ],
-  declarations: [ AppComponent, HelloComponent, MainComponent, OtherComponent ],
+  declarations: [ AppComponent, HelloComponent, MainComponent, OtherComponent, UserComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PopulateUsersService]
 })
