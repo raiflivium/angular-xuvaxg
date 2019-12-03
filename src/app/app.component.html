@@ -3,4 +3,11 @@
   Start editing to see some magic happen :)
 </p>
 
+<button (click)=clickMe()> Press me if you can!!!!</button>
+<button (click)=nextPage()> Press me if you can!!!!</button>
+
+<a [routerLink]="'/'"> Main page</a>
+
+<a [routerLink]="'/other'"> Other page</a>
+
 <router-outlet></router-outlet>
