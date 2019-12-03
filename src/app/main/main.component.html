@@ -1,6 +1,10 @@
 <div>
-    <label>Name: </label>
-    <input [(ngModel)]="this.user.name" placeholder="Name"/>
+    <label>First Name: </label>
+    <input [(ngModel)]="this.user.first_name" placeholder="First Name"/>
+    <br/>
+
+    <label>Last Name: </label>
+    <input [(ngModel)]="this.user.last_name" placeholder="Last Name"/>
     <br/>
     
     <label>Email: </label>
@@ -14,12 +18,11 @@
 
     <br/>
 </div>
-<table>
-  <tr>
-      <th>Nume</th><th>Email</th>
-  </tr>
-  <tr *ngFor="let user of users">
+<div>
+
+  <div *ngFor="let user of users">
       <app-user [user]="user"></app-user>
-  <button (click)="deleteFromTable(user)">Delete</button>
-  </tr>
-</table>
+      <button (click)="deleteFromTable(user)">Delete</button>
+      <hr>
+  </div>
+</div>
