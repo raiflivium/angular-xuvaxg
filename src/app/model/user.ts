@@ -9,5 +9,8 @@ export class User {
     this.last_name = new_last_name;
     this.email = new_email;
     this.avatar = new_avatar;
+    if (this.avatar == '') {
+      this.avatar = 'https://assets.change.org/photos/8/lz/zn/lnlZznxSMRkSelw-128x128-noPad.jpg?1494276760';
+    }
   }
 }
