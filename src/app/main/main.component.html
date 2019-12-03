@@ -1,0 +1,28 @@
+<div>
+    <label>Name: </label>
+    <input [(ngModel)]="this.name" placeholder="Name"/>
+    <br/>
+    
+    <label>Email: </label>
+    <input [(ngModel)]="this.email" (keydown.enter) = "addInTable()" placeholder="email@email.com"/>
+    <br/>
+
+    <button  mat-fab color="accent" (click)="addInTable()">Add</button>
+    <br/>
+
+    <a href="/assets/test.txt"> <button>Du-te la un TXT. Sigur iti doresti asta!</button></a>
+
+    <br/>
+</div>
+
+
+<table>
+        <tr>
+            <th>Nume</th><th>Email</th>
+        </tr>
+        <tr *ngFor="let user of users">
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+        <button (click)="deleteFromTable(user)">Delete</button>
+        </tr>
+    </table>
