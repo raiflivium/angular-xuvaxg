@@ -1,10 +1,10 @@
 <div>
     <label>Name: </label>
-    <input [(ngModel)]="this.name" placeholder="Name"/>
+    <input [(ngModel)]="this.user.name" placeholder="Name"/>
     <br/>
     
     <label>Email: </label>
-    <input [(ngModel)]="this.email" (keydown.enter) = "addInTable()" placeholder="email@email.com"/>
+    <input [(ngModel)]="this.user.email" (keydown.enter) = "addInTable()" placeholder="email@email.com"/>
     <br/>
 
     <button  mat-fab color="accent" (click)="addInTable()">Add</button>

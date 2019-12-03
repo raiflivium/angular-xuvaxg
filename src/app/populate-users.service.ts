@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
+import { User } from './model/user';
 
 @Injectable()
 export class PopulateUsersService {
 
   constructor() { }
 
-  public getUsers(): any[] {
+  public getUsers(): User[] {
     return [
-      { name: "Mihai", email: "mihai@mihai.com" },
-      { name: "Aurel", email: "aurel@haurel.com" }
+      new User("Mihai", "mihai@mihai.com"),
+      new User("Aurel", "aurel@haurel.com")
     ];
   }
 }

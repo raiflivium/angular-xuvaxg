@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from '../model/user';
+
 import { PopulateUsersService } from '../populate-users.service';
+
 
 @Component({
   selector: 'app-main',
@@ -7,28 +10,27 @@ import { PopulateUsersService } from '../populate-users.service';
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  private users: any[] = []
+  private users: User[] = []
 
-  name: string = "";
-  email: string= "";
+  private user: User;
 
   constructor(private userService : PopulateUsersService) { }
 
   ngOnInit() {
     this.users = this.userService.getUsers();
+    this.user = new User("","");
   }
 
   addInTable() {
-    console.log(this.name);
-    console.log(this.email);
-    if(this.name == "" || this.email == "") {
+    console.log(this.user.name);
+    console.log(this.user.email);
+    if(this.user.name == "" || this.user.email == "") {
       return;
     }
 
-    this.users.push({name:this.name, email:this.email});
+    this.users.push(new User(this.user.name, this.user.email));
 
-    this.name="";
-    this.email="";
+    this.user = new User("", "");
   }
   
   deleteFromTable(user) {
