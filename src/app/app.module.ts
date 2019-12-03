@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PopulateUsersService } from './populate-users.service';
 import { UserComponent } from './user/user.component';
 import { UserService } from './service/user.service';
+import { UserDetailsComponent } from './user-details/user-details.component';
 
 
 @NgModule({
@@ -23,7 +24,7 @@ import { UserService } from './service/user.service';
     FormsModule,
     HttpClientModule
   ],
-  declarations: [ AppComponent, HelloComponent, MainComponent, OtherComponent, UserComponent ],
+  declarations: [ AppComponent, HelloComponent, MainComponent, OtherComponent, UserComponent, UserDetailsComponent ],
   bootstrap:    [ AppComponent ],
   providers: [PopulateUsersService, UserService]
 })

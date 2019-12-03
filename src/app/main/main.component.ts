@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { User } from '../model/user';
+import { Router } from '@angular/router';
 
+import { User } from '../model/user';
 import { UserService } from '../service/user.service';
 
 
@@ -14,7 +15,7 @@ export class MainComponent implements OnInit {
 
   private user: User;
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getUsers().subscribe(data => this.users = data.data);
@@ -34,9 +35,16 @@ export class MainComponent implements OnInit {
     this.user = new User("", "", "", "");
   }
   
-  deleteFromTable(user) {
+  deleteFromTable(user: User) {
     console.log(user);
     this.users = this.users.filter(a => user.first_name != a.first_name || user.last_name != a.last_name || user.email != a.email);
+  }
+
+
+  details(user: User) {
+    this.userService.setUser(user);
+        this.router.navigate(['/user']);
+
   }
 
 }

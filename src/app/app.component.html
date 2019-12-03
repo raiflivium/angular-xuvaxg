@@ -1,26 +1,39 @@
-<div classs="container">
-  <div class="row">
-    <h1>{{ name }}</h1>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand">Angular Demo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a [routerLink]="'/'" class="nav-link">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a [routerLink]="'/other'" class="nav-link">Other</a>
+      </li>
+    
+    </ul>
+    <div>{{name}}</div><p>&nbsp;&nbsp;&nbsp;</p>
+    <div class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" [(ngModel)]="name" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </div>
   </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        <button type="button" class="btn btn-dark" (click)=clickMe()> Do nothing</button>
-      </div>
-      <div class="col-sm">
-        <button type="button" class="btn btn-dark" (click)=nextPage()> Other component</button>
-      </div>
+</nav>
+
+
+<div classs="container">
+  <div class="row ctr">
+    <div class="col-sm">
+      <button type="button" class="btn btn-dark" (click)=clickMe()> Do nothing</button>
     </div>
-    <div class="row">
-      <div class="col-sm">
-        <a [routerLink]="'/'"> Main page</a>
-      </div>
-      <div class="col-sm">
-        <a [routerLink]="'/other'"> Other page</a>
-      </div>  
+    <div class="col-sm">
+      <button type="button" class="btn btn-dark" (click)=nextPage()> Other component</button>
     </div>
-    <div class="row">
+  </div>
+    
+
+  <div class="row">
       <router-outlet></router-outlet>
     </div>
-  </div>
 </div>
