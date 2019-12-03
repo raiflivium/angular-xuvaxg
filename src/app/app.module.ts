@@ -10,6 +10,7 @@ import { OtherComponent } from './other/other.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PopulateUsersService } from './populate-users.service';
 import { UserComponent } from './user/user.component';
+import { UserService } from './service/user.service';
 
 
 @NgModule({
@@ -20,6 +21,6 @@ import { UserComponent } from './user/user.component';
   ],
   declarations: [ AppComponent, HelloComponent, MainComponent, OtherComponent, UserComponent ],
   bootstrap:    [ AppComponent ],
-  providers: [PopulateUsersService]
+  providers: [PopulateUsersService, UserService]
 })
 export class AppModule { }
