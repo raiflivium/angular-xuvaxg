@@ -1,7 +1,11 @@
 
-<h1>{{ user.first_name + " " + user.last_name }}</h1>
-<app-user [user]="user"></app-user>
-<div classs="container">
+<div classs="container card">
+  <div class="row ctr">
+      <h1>{{ user.first_name + " " + user.last_name }}</h1>
+  </div>
+  <div class="row ctr">
+      <app-user [user]="user"></app-user>
+  </div>
   <div class="row ctr">
     <div class="col-sm">
       <button type="button" class="btn btn-dark" (click)=firstPage()>Back</button>

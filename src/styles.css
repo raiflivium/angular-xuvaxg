@@ -9,3 +9,8 @@ app-main {
 button {
   margin: 10px !important;
 }
+
+.card {
+  background-color: #f8f9fa !important;
+  margin: 5px !important;
+}
