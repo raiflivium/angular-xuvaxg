@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import  { User } from '../model/user';
 import { UserService } from '../service/user.service'
 
@@ -11,10 +12,14 @@ export class UserDetailsComponent implements OnInit {
 
   private user: User;
 
-  constructor(private userService : UserService) { }
+  constructor(private router: Router, private userService : UserService) { }
 
   ngOnInit() {
     this.user = this.userService.getUser();
+  }
+
+  firstPage() {
+    this.router.navigate(['/']);
   }
 
 }
